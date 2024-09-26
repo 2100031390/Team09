@@ -15,6 +15,10 @@ const TemplateDetail = () => {
     cgpa: '',
     passedOut: ''
   });
+  
+  const [shareableLink, setShareableLink] = useState(''); // For the Word file shareable link
+  const [customUrl, setCustomUrl] = useState(''); // For the custom URL input
+  const [publishedLink, setPublishedLink] = useState(''); // For the published portfolio link
 
   const formRef = useRef(); // For PDF or Word export
 
@@ -42,7 +46,7 @@ const TemplateDetail = () => {
     doc.save(`template-${templateId}.pdf`);
   };
 
-  // Generate and download as Word (DOCX)
+  // Generate and download as Word (DOCX) and create a shareable link
   const handleDownloadWord = () => {
     const content = `
       Template ID: ${templateId}\n
@@ -60,6 +64,27 @@ const TemplateDetail = () => {
     link.href = URL.createObjectURL(blob);
     link.download = `template-${templateId}.docx`;
     link.click();
+
+    // Create a shareable link (in a real scenario, this should be uploaded to a server)
+    const shareableURL = link.href;
+    setShareableLink(shareableURL);
+  };
+
+  // Copy the shareable link to clipboard
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText(shareableLink).then(() => {
+      alert('Link copied to clipboard!');
+    }).catch((err) => {
+      console.error('Could not copy text: ', err);
+    });
+  };
+
+  // Publish the portfolio
+  const handlePublishPortfolio = () => {
+    // In a real application, this would involve an API call to save the data to a database
+    const publishedPortfolioLink = `https://drive.google.com/file/d/1VVJ6q7To30l5Vwk748UfY949LfTlGz0K/view?usp=drive_link/${customUrl}`;
+    setPublishedLink(publishedPortfolioLink);
+    alert('Portfolio published successfully!');
   };
 
   return (
@@ -152,6 +177,40 @@ const TemplateDetail = () => {
         <button type="button" onClick={handleDownloadWord}>
           Download as Word
         </button>
+
+        {/* Only show the Copy Link button if the shareable link exists */}
+        {shareableLink && (
+          <div>
+            <p>Shareable Link: <a href={shareableLink} target="_blank" rel="noopener noreferrer">{shareableLink}</a></p>
+            <button type="button" onClick={handleCopyLink}>
+              Copy Link to Clipboard
+            </button>
+          </div>
+        )}
+        
+        {/* Custom URL Section */}
+        <div>
+          <label>Custom URL:</label>
+          <input
+            type="text"
+            value={customUrl}
+            onChange={(e) => setCustomUrl(e.target.value)}
+            placeholder="Enter your custom URL"
+          />
+        </div>
+        <button type="button" onClick={handlePublishPortfolio}>
+          Publish Portfolio
+        </button>
+
+        {/* Only show the published link if it exists */}
+        {publishedLink && (
+          <div>
+            <p>Your published portfolio link: <a href={publishedLink} target="_blank" rel="noopener noreferrer">{publishedLink}</a></p>
+            <button type="button" onClick={() => navigator.clipboard.writeText(publishedLink)}>
+              Copy Published Link
+            </button>
+          </div>
+        )}
       </form>
 
       {/* Dynamic Preview */}
