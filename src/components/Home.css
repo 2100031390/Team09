@@ -1,0 +1,58 @@
+.home {
+    padding: 20px;
+    background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0'); /* Background image */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    color: white; 
+    perspective: 1000px; /* Set perspective for 3D effect */
+  }
+  
+  .intro {
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for contrast */
+    padding: 20px; /* Add padding for better spacing */
+    border-radius: 8px; /* Optional: add rounded corners */
+    transform: translateZ(50px); /* Bring the intro section forward */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transition for hover effect */
+  }
+  
+  .intro:hover {
+    transform: translateZ(70px); /* Increase the elevation on hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Darker shadow on hover */
+  }
+  
+  .skills, .projects {
+    margin-top: 40px;
+  }
+  
+  .skills-list, .project-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .skill-card, .project-card {
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Lighter border for contrast */
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff; /* Change text color for better readability */
+    transition: transform 0.3s, background 0.3s; /* Transition effects */
+  }
+  
+  .skill-card:hover, .project-card:hover {
+    background: rgba(255, 255, 255, 0.2); /* Light background on hover */
+    transform: translateY(-5px) scale(1.05); /* Lift effect and scale */
+  }
+  
+  .project-detail {
+    padding: 20px;
+  }
+  
+  .project-detail a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  

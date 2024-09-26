@@ -1,0 +1,28 @@
+/* src/components/Templates.css */
+
+.templates {
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #f3f4f6, #e2e8f0);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .template-list {
+    margin-top: 20px;
+  }
+  
+  .template-card {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px 0;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  
+  .template-card:hover {
+    transform: translateY(-3px); /* Lift effect on hover */
+  }
+  
