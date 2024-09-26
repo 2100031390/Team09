@@ -8,18 +8,29 @@ const ProjectDetail = () => {
   const projects = {
     1: {
       title: 'Project 1',
-      description: 'Detailed description of Project 1.',
-      githubLink: 'https://github.com/yourusername/project1',
+      description: `Our project aims to promote pet adoption and improve the management of accessories. 
+      We believe pets bring joy into people's lives and should be treated with love and care. 
+      I have done this project using Java Full Stack.
+      Using : Java Full Stack Development
+      Role : Team Member`,
+      githubLink: 'https://github.com/2100031390',
     },
     2: {
       title: 'Project 2',
-      description: 'Detailed description of Project 2.',
-      githubLink: 'https://github.com/yourusername/project2',
+      description: `Health & Life Insurance System (H.L.I)
+                   Health & Life insurance System (H.L.I) is an insurance that covers part of the riskof a person
+                   incurring medical expenses. Life insurance can help to your family reduce their financial burden in
+                   case of your untimely demise.
+                   Using : Mern Stack Web Development
+                   Role :Team Member`,
+      githubLink: 'https://github.com/2100031390',
     },
     3: {
       title: 'Project 3',
-      description: 'Detailed description of Project 3.',
-      githubLink: 'https://github.com/yourusername/project3',
+      description: `Real Estate Management refers to the operation, control, and oversight of real estate properties, 
+      including residential, commercial, and industrial properties. It encompasses various activities aimed at maximizing the value of properties 
+      while ensuring they are well-maintained and provide satisfactory returns to owners and investors.`,
+      githubLink: 'https://github.com/2100031390',
     },
   };
 
